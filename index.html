@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MumAI — Handle the stream</title>
-  <meta name="description" content="MumAI helps busy parents stay on top of school emails, class WhatsApp messages, and family calendars — all in one place, with you always in control.">
+  <title>MumAI — The mental load, finally offloaded</title>
+  <meta name="description" content="An assistant that knows your family. MumAI learns the kids, the schools, the schedules — and quietly turns the noise into drafted replies, the right reminders, and a calendar that reflects your life.">
 
   <!-- Fraunces (display) + DM Sans (body/UI) — from design system spec -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,10 +120,11 @@
       font-size: 17px;
       font-weight: 400;
       color: var(--slate-mid);
-      max-width: 480px;
+      max-width: 520px;
       margin: 22px auto 48px;
       line-height: 1.65;
     }
+    .hero-sub strong { color: var(--slate); font-weight: 500; }
 
     /* ── EMAIL SIGNUP ── */
     .signup-wrap { max-width: 440px; margin: 0 auto; }
@@ -209,6 +210,20 @@
     }
     .body-text strong { color: var(--slate-dark); font-weight: 500; }
 
+    /* ── Inline brand wordmark — Fraunces italic AI in body copy ── */
+    .hero-sub em,
+    .body-text em,
+    .feature-card p em,
+    .trust-list em,
+    .cta-bottom .intro em,
+    footer p em {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+      font-style: italic;
+      font-weight: 300;
+      color: inherit;
+    }
+
     /* ── PULL QUOTE ── */
     .pull-quote {
       background: white;
@@ -266,6 +281,33 @@
       line-height: 1.6;
     }
 
+    /* ── TRUST LIST ── */
+    .trust-list {
+      list-style: none;
+      margin-top: 18px;
+    }
+    .trust-list li {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--slate);
+      line-height: 1.6;
+      padding: 10px 0;
+      border-bottom: 0.5px solid var(--slate-light);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .trust-list li:last-child { border-bottom: none; }
+    .trust-list li strong {
+      color: var(--slate-dark);
+      font-weight: 500;
+      flex: 0 0 130px;
+    }
+    @media (max-width: 520px) {
+      .trust-list li { flex-direction: column; gap: 4px; }
+      .trust-list li strong { flex: none; }
+    }
+
     /* ── BOTTOM CTA ── */
     .cta-bottom {
       text-align: center;
@@ -276,6 +318,9 @@
       font-size: 15px;
       color: var(--slate-mid);
       margin-bottom: 36px;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .cta-bottom .signup { justify-content: center; }
 
@@ -302,8 +347,8 @@
 
   <nav>
     <div class="container">
-      <span class="logo">MumAI</span>
-      <span class="nav-badge">Coming soon</span>
+      <span class="logo">Mum<em>AI</em></span>
+      <span class="nav-badge">Early access</span>
     </div>
   </nav>
 
@@ -312,9 +357,9 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container">
-        <span class="label">For the parent who handles everything</span>
-        <h1>Handle the stream.<br><em>You focus on what matters.</em></h1>
-        <p class="hero-sub">School emails. Class WhatsApps. Permission slips with a Friday deadline. MumAI brings it all into one place — and helps you act before things slip.</p>
+        <span class="label">For the mum running everything</span>
+        <h1>An assistant that<br><em>knows your family.</em></h1>
+        <p class="hero-sub">School emails. Class WhatsApps. Appointments and deadlines. Mum<em>AI</em> learns your family — the kids, the schools, the schedules — and quietly turns the noise into drafted replies, the right reminders, and <strong>a calendar that reflects your life</strong>.</p>
 
         <!--
           FORMSPREE SETUP (2 min):
@@ -329,7 +374,7 @@
             <button type="submit">Get early access</button>
           </form>
           <div class="signup-thanks" id="thanks-hero">Got it — we'll be in touch!</div>
-          <p class="signup-note">No spam, ever.</p>
+          <p class="signup-note">Early testing now. We'll only email you when there's something to try.</p>
         </div>
       </div>
     </section>
@@ -339,10 +384,10 @@
       <div class="container">
         <span class="label">The problem</span>
         <h2>The mental load<br><em>is real.</em></h2>
-        <p class="body-text">A school newsletter PDF arrives by email. A follow-up lands in the class WhatsApp. The reply deadline is buried three pages into the PDF. And somewhere in all of that, your kid needs you to RSVP to a birthday party, order a gift, and work out who's driving.</p>
+        <p class="body-text">A school newsletter PDF arrives by email. A follow-up lands in the class WhatsApp. The reply deadline is buried three pages into the PDF. Somewhere in all that, your kid needs you to RSVP to a birthday party, order a gift, and work out who's driving.</p>
         <p class="body-text">None of it is hard. There's just <strong>so much of it</strong> — spread across so many apps, arriving at the worst possible moments. Things slip. Not because you're disorganised. Because the system is broken.</p>
         <div class="pull-quote">
-          <p>"Handle the stream. You focus on what matters."</p>
+          <p>"The mental load, finally offloaded."</p>
         </div>
       </div>
     </section>
@@ -350,41 +395,47 @@
     <!-- FEATURES -->
     <section>
       <div class="container">
-        <span class="label">What it does</span>
-        <h2>From buried inbox<br><em>to done, in a few taps.</em></h2>
+        <span class="label">How it works</span>
+        <h2>Built around how<br><em>you already work.</em></h2>
+        <p class="body-text">Just forward, snap, or speak — Mum<em>AI</em> does the rest.</p>
         <div class="feature-grid" id="feature-grid">
           <div class="feature-card">
             <div class="feature-icon">📧</div>
-            <h3>School emails, surfaced</h3>
-            <p>Point MumAI at any sender — school, sports club, music teacher. It pulls the latest email, including text from any PDFs attached or linked inside.</p>
+            <h3>Forward, snap, or speak</h3>
+            <p>Forward the school email. Snap the permission slip. Voice-note the change in pick-up time. Mum<em>AI</em> reads it and pulls out what matters.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">💬</div>
-            <h3>WhatsApp in one tap</h3>
-            <p>Forward any message from your class groups into MumAI using the iOS share sheet. No screenshots, no copying and pasting.</p>
+            <div class="feature-icon">👨‍👩‍👧</div>
+            <h3>Learns your family</h3>
+            <p>The kids, the pets, the teachers, the co-parent, the nanny, Grandma. Mum<em>AI</em> builds context once and uses it everywhere — the right tone for the right message.</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">📅</div>
-            <h3>Act on it immediately</h3>
-            <p>Draft a reply, add a calendar event, set a reminder, or fire back a WhatsApp — all from one place, with the right context already there.</p>
+            <h3>Turns mess into a week</h3>
+            <p>Scattered inputs become a coordinated calendar, the right reminders, and drafted replies — including the permission slip, already filled in.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>You stay in control</h3>
-            <p>MumAI never sends a message or saves an event without your tap. Every suggestion waits for your say-so. Always.</p>
+            <div class="feature-icon">✓</div>
+            <h3>You approve every send</h3>
+            <p>Drafts wait for your review. No autonomous emails, no surprise messages, no invites going out under your name. Mum<em>AI</em> does the heavy lifting — you stay in control.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PHILOSOPHY -->
+    <!-- DIFFERENTIATION -->
     <section>
       <div class="container">
-        <span class="label">How we think about it</span>
-        <h2>AI that helps,<br><em>not hijacks.</em></h2>
-        <p class="body-text">A lot of AI tools want to do things for you. MumAI's approach is different: it handles the boring, time-wasting part — finding the thing, pulling the context, drafting the message — and then <strong>hands control back to you</strong> before anything actually happens.</p>
-        <p class="body-text">Your emails, your calendar, your family's messages are personal. MumAI lives on your device, keeps your data private, and only ever suggests. You decide what gets sent, saved, or ignored.</p>
-        <p class="body-text"><strong>No autonomous sends. No calendar writes without your approval. No surprises.</strong></p>
+        <span class="label">What sets it apart</span>
+        <h2>Why Mum<em>AI</em><br><em>is different.</em></h2>
+        <p class="body-text">A lot of AI tools want to do things for you. Mum<em>AI</em> is different — it works around the life you already have, with the family you actually know, and you stay in control of every send.</p>
+        <ul class="trust-list">
+          <li><strong>You stay in control</strong><span>Drafts wait for your tap. No autonomous emails, no surprise calendar invites. Ever.</span></li>
+          <li><strong>Context that grows with your family</strong><span>Mum<em>AI</em> learns the kids, the co-parent, the nanny, the schedules — and you can update or remove anything, any time.</span></li>
+          <li><strong>Fits the apps you already use</strong><span>Forward from your inbox. Share from your group chats. Sync to your calendar. No new behaviours to learn.</span></li>
+          <li><strong>No prompts, no setup, no AI homework</strong><span>All the power of modern AI, none of the wrangling. Mum<em>AI</em> handles the AI part so you don't have to.</span></li>
+          <li><strong>Commitment to privacy</strong><span>Your family's context is used to help you — never to train any AI model, ours or anyone else's. What Mum<em>AI</em> learns belongs to your account alone, and isn't shared with other users.</span></li>
+        </ul>
       </div>
     </section>
 
@@ -392,15 +443,15 @@
     <section class="cta-bottom" id="waitlist">
       <div class="container">
         <span class="label" style="text-align:center;">Early access</span>
-        <h2>Want to try it first?</h2>
-        <p class="intro">MumAI is in early testing. Leave your email and we'll reach out when the first spots open up.</p>
+        <h2>Want to try it<br><em>first?</em></h2>
+        <p class="intro">Mum<em>AI</em> is in early testing. Leave your email and we'll be in touch when the first spots open up.</p>
         <div class="signup-wrap" style="margin: 0 auto;">
           <form class="signup" style="justify-content:center;" action="https://formspree.io/f/xjgzvoar" method="POST">
             <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
             <button type="submit">Keep me posted</button>
           </form>
           <div class="signup-thanks" id="thanks-bottom">Got it — we'll be in touch!</div>
-          <p class="signup-note">No spam, ever.</p>
+          <p class="signup-note">No spam. Just an email when there's something real to try.</p>
         </div>
       </div>
     </section>
@@ -409,7 +460,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 MumAI &mdash; mumai.com.au</p>
+      <p>&copy; 2026 Mum<em>AI</em> &mdash; mumai.com.au</p>
       <div class="footer-links">
         <a href="privacy/index.html">Privacy</a>
         <a href="mailto:team@mumai.com.au">team@mumai.com.au</a>
