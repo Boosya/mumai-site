@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — MumAI</title>
+  <meta name="description" content="MumAI is built by Lauren Williams, Wendy Glasgow and Ekaterina Gasparian — three technology operators with nine kids between them, building the assistant they spent years wishing existed.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Design tokens — Blush & Slate system ── */
+    :root {
+      --slate-dark:  #1B2333;
+      --slate:       #3D4F6E;
+      --slate-mid:   #8A9BB8;
+      --slate-light: #D8E0ED;
+      --off-white:   #F6F8FB;
+
+      --blush:       #E8879D;
+      --blush-mid:   #F2BACB;
+      --blush-light: #FCEEF1;
+
+      --muted:       #A8B4C8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-weight: 400;
+      background: var(--off-white);
+      color: var(--slate-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .label {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--slate-mid);
+      margin-bottom: 14px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 0.5px solid var(--slate-light);
+      padding: 20px 0;
+      background: var(--off-white);
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--slate-dark);
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+    .logo em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--slate);
+    }
+    .nav-back {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate-mid);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--slate); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 0 8px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+      font-size: clamp(36px, 7vw, 52px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -1.2px;
+      color: var(--slate-dark);
+    }
+    h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--slate);
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--slate-mid);
+      max-width: 520px;
+      margin: 22px auto 0;
+      line-height: 1.65;
+    }
+    .hero-sub strong { color: var(--slate); font-weight: 500; }
+
+    /* ── SECTIONS ── */
+    section { padding: 64px 0; border-top: 0.5px solid var(--slate-light); }
+    section:first-of-type { border-top: none; }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      color: var(--slate-dark);
+      margin-bottom: 20px;
+    }
+    h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--slate);
+    }
+
+    .body-text {
+      font-size: 15px;
+      color: var(--slate);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .body-text strong { color: var(--slate-dark); font-weight: 500; }
+
+    /* ── Inline brand wordmark — Fraunces italic AI in body copy ── */
+    .hero-sub em,
+    .body-text em,
+    .founder-bio em,
+    .cta-bottom .intro em,
+    footer p em {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+      font-style: italic;
+      font-weight: 300;
+      color: inherit;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      background: white;
+      border: 0.5px solid var(--slate-light);
+      border-left: 2px solid var(--blush);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 28px 0;
+    }
+    .pull-quote p {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--slate);
+      line-height: 1.5;
+    }
+
+    /* ── FOUNDER CARDS ── */
+    .founders { margin-top: 32px; }
+
+    .founder {
+      background: white;
+      border: 0.5px solid var(--slate-light);
+      border-radius: 14px;
+      padding: 26px;
+      margin-bottom: 12px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 200ms ease-out, transform 200ms ease-out;
+    }
+    .founder.visible { opacity: 1; transform: translateY(0); }
+    .founder:nth-child(2) { transition-delay: 40ms; }
+    .founder:nth-child(3) { transition-delay: 80ms; }
+    .founder:last-child { margin-bottom: 0; }
+
+    .founder-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    /* Avatar: photo over an initials fallback — if the image fails to load
+       it removes itself and the initials show through. */
+    .founder-avatar {
+      position: relative;
+      flex: 0 0 auto;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--blush-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .founder-initials {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--slate);
+    }
+    .founder-avatar img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .founder-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--slate-dark);
+      line-height: 1.3;
+    }
+    .founder-role {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--slate-mid);
+      margin-top: 3px;
+    }
+    .founder-bio {
+      font-size: 14px;
+      color: var(--slate);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .founder-bio:last-child { margin-bottom: 0; }
+    .founder-bio strong { color: var(--slate-dark); font-weight: 500; }
+
+    /* ── BOTTOM CTA ── */
+    .cta-bottom {
+      text-align: center;
+      padding-bottom: 96px;
+    }
+    .cta-bottom h2 { margin-bottom: 10px; }
+    .cta-bottom .intro {
+      font-size: 15px;
+      color: var(--slate-mid);
+      margin-bottom: 32px;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 13px 26px;
+      background: var(--blush);
+      color: white;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .cta-button:hover { opacity: 0.88; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid var(--slate-light);
+      padding: 24px 0;
+      background: white;
+    }
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer p { font-size: 12px; color: var(--muted); }
+    footer a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    footer a:hover { color: var(--slate); }
+    .footer-links { display: flex; gap: 20px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">Mum<em>AI</em></a>
+      <a href="../index.html" class="nav-back">← Back</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <span class="label">About us</span>
+        <h1>Built by the people<br><em>carrying the load.</em></h1>
+        <p class="hero-sub">Mum<em>AI</em> is made by three operators who have spent their careers building and scaling technology companies — and their evenings <strong>running the family logistics no one else sees</strong>. Nine kids between them.</p>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section>
+      <div class="container">
+        <span class="label">How it started</span>
+        <h2>It started with<br><em>a joke at dinner.</em></h2>
+        <p class="body-text">Years before that dinner, Wendy and Ekaterina sat near each other at Canva — one with three kids, one with four — comparing notes between meetings on what it actually takes to hold down a full-time job and a family at the same time. They went on to work together twice, at Canva and later at Grow, and the conversation followed them. They kept describing the help they wished existed. At the time it didn't: this was before large language models changed what software could do, so it stayed a thing they talked about.</p>
+        <p class="body-text">Then, in 2026, Lauren was at dinner with friends and the conversation landed in the same place. Someone joked that what every household really needed was a Mum<em>AI</em>. Her husband's version was sharper: <strong>she already was one</strong> — the family's Mum<em>AI</em>, holding every date and deadline in her head, running like a machine.</p>
+        <div class="pull-quote">
+          <p>"You already are their Mum<em>AI</em>."</p>
+        </div>
+        <p class="body-text">It got a laugh at the table. It landed differently for Lauren. The joke was funny because it was true — and, for the first time, the technology to actually build the thing existed.</p>
+        <p class="body-text">She called Wendy, who she'd worked with years earlier. Wendy brought in Ekaterina. The assistant the two of them had been describing to each other for years was suddenly buildable, and they had the people to build it.</p>
+        <p class="body-text">Between the three of them: <strong>nine kids, three full-time careers, and three partners building careers of their own</strong>. They didn't research this user. They are her.</p>
+      </div>
+    </section>
+
+    <!-- FOUNDERS -->
+    <section>
+      <div class="container">
+        <span class="label">The founders</span>
+        <h2>Three founders,<br><em>one shared problem.</em></h2>
+
+        <div class="founders" id="founders">
+
+          <div class="founder">
+            <div class="founder-head">
+              <div class="founder-avatar">
+                <span class="founder-initials">LW</span>
+                <img src="lauren.jpg" alt="Lauren Williams" width="52" height="52" loading="lazy" onerror="this.remove()">
+              </div>
+              <div>
+                <div class="founder-name">Lauren Williams</div>
+                <div class="founder-role">Co-CEO</div>
+              </div>
+            </div>
+            <p class="founder-bio">Lauren Williams is a technology business builder with two decades' experience building and scaling companies.</p>
+            <p class="founder-bio">As CEO of CarsGuide, she grew revenue four-fold and took the business from unprofitable to profitable, beating the rule of 40 and leading to its sale to Cox Automotive, a US-based software company. She was previously Founder and COO of Getaway Lounge, a travel e-commerce business sold by Nine Entertainment and now known as Luxury Escapes.</p>
+            <p class="founder-bio">Lauren holds Honours in Economics from Harvard University. Over the past six years she has served as a public and private company director across growth technology businesses.</p>
+          </div>
+
+          <div class="founder">
+            <div class="founder-head">
+              <div class="founder-avatar">
+                <span class="founder-initials">WG</span>
+                <img src="wendy.jpg" alt="Wendy Glasgow" width="52" height="52" loading="lazy" onerror="this.remove()">
+              </div>
+              <div>
+                <div class="founder-name">Wendy Glasgow</div>
+                <div class="founder-role">Co-CEO</div>
+              </div>
+            </div>
+            <p class="founder-bio">Wendy Glasgow has spent twenty years building technology, most of it in digital products, data and AI.</p>
+            <p class="founder-bio">As Canva's first Head of Data she grew the practice into a 350-person team spanning machine learning, data science and data engineering. She has twice served as Chief Technology Officer — at ASX-listed OFX, and at Grow Inc, where she shipped production AI inside an APRA-regulated superannuation platform and scaled both the platform and funds under management ten-fold. Earlier she led Google's data solutions and consulting practice across APAC, and delivered global products at Microsoft across Europe and Asia.</p>
+            <p class="founder-bio">Wendy holds a Bachelor of Laws alongside a Bachelor of Information Technology, and privacy has been central to her work throughout her career. She has served on the board of Barnardos Australia, one of the country's leading children's charities, for seven years.</p>
+          </div>
+
+          <div class="founder">
+            <div class="founder-head">
+              <div class="founder-avatar">
+                <span class="founder-initials">EG</span>
+                <img src="ekaterina.jpg" alt="Ekaterina Gasparian" width="52" height="52" loading="lazy" onerror="this.remove()">
+              </div>
+              <div>
+                <div class="founder-name">Ekaterina Gasparian</div>
+                <div class="founder-role">Chief Technology Officer</div>
+              </div>
+            </div>
+            <p class="founder-bio">Ekaterina Gasparian is an engineering leader who has spent her career building AI products used by hundreds of millions of people.</p>
+            <p class="founder-bio">She began at Google in Dublin, working on search product quality operations, before moving to Sydney and completing a Master's at UNSW with a double specialisation in Data Science &amp; Engineering and Artificial Intelligence, graduating with honours.</p>
+            <p class="founder-bio">At Canva she helped build Canva AI — personalising the experience on a platform now used by 265 million people every month — and worked on design AI. She was most recently Head of Engineering at Grow Inc, a fintech business in the superannuation sector.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="cta-bottom">
+      <div class="container">
+        <span class="label">Early access</span>
+        <h2>Want to try it<br><em>first?</em></h2>
+        <p class="intro">Mum<em>AI</em> is in early testing. Leave your email and we'll be in touch when the first spots open up.</p>
+        <a href="../index.html#waitlist" class="cta-button">Get early access</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Mum<em>AI</em> &mdash; mumai.com.au</p>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../privacy/index.html">Privacy</a>
+        <a href="mailto:team@mumai.com.au">team@mumai.com.au</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Card entrance: fade + translateY(8px)→0, 200ms ease-out, 40ms stagger — per design spec */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.founder').forEach(c => observer.observe(c));
+  </script>
+
+</body>
+</html>
