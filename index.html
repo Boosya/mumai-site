@@ -83,6 +83,20 @@
       font-weight: 300;
       color: var(--slate);
     }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .nav-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate-mid);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-link:hover { color: var(--slate); }
     .nav-badge {
       font-family: 'DM Sans', sans-serif;
       font-size: 11px;
@@ -348,7 +362,10 @@
   <nav>
     <div class="container">
       <span class="logo">Mum<em>AI</em></span>
-      <span class="nav-badge">Early access</span>
+      <div class="nav-right">
+        <a href="about/index.html" class="nav-link">About</a>
+        <span class="nav-badge">Early access</span>
+      </div>
     </div>
   </nav>
 
@@ -462,6 +479,7 @@
     <div class="container">
       <p>&copy; 2026 Mum<em>AI</em> &mdash; mumai.com.au</p>
       <div class="footer-links">
+        <a href="about/index.html">About</a>
         <a href="privacy/index.html">Privacy</a>
         <a href="mailto:team@mumai.com.au">team@mumai.com.au</a>
       </div>

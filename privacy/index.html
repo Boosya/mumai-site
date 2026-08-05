@@ -179,6 +179,7 @@
     footer p { font-size: 12px; color: var(--muted); }
     footer a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
     footer a:hover { color: var(--slate); }
+    .footer-links { display: flex; gap: 20px; }
   </style>
 </head>
 <body>
@@ -328,7 +329,10 @@
   <footer>
     <div class="container">
       <p>&copy; 2026 MumAI &mdash; mumai.com.au</p>
-      <a href="../index.html">Back to home</a>
+      <div class="footer-links">
+        <a href="../about/index.html">About</a>
+        <a href="../index.html">Back to home</a>
+      </div>
     </div>
   </footer>
 
