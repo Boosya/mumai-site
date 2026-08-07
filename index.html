@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MumAI — The mental load, finally offloaded</title>
   <meta name="description" content="An assistant that knows your family. MumAI learns the kids, the schools, the schedules — and quietly turns the noise into drafted replies, the right reminders, and a calendar that reflects your life.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 
   <!-- Fraunces (display) + DM Sans (body/UI) — from design system spec -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,18 +71,10 @@
       align-items: center;
       justify-content: space-between;
     }
-    .logo {
-      font-family: 'Fraunces', serif;
-      font-optical-sizing: auto;
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--slate-dark);
-      letter-spacing: -0.3px;
-    }
-    .logo em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--slate);
+    .logo img {
+      height: 30px;
+      width: auto;
+      display: block;
     }
     .nav-right {
       display: flex;
@@ -111,7 +104,7 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 88px 0 72px;
+      padding: 44px 0 72px;
       text-align: center;
       border-top: none;
     }
@@ -128,17 +121,17 @@
     h1 em {
       font-style: italic;
       font-weight: 300;
-      color: var(--slate);
+      color: var(--blush);
     }
     .hero-sub {
       font-size: 17px;
       font-weight: 400;
-      color: var(--slate-mid);
+      color: var(--slate);
       max-width: 520px;
       margin: 22px auto 48px;
       line-height: 1.65;
     }
-    .hero-sub strong { color: var(--slate); font-weight: 500; }
+    .hero-sub strong { color: var(--slate-dark); font-weight: 500; }
 
     /* ── EMAIL SIGNUP ── */
     .signup-wrap { max-width: 440px; margin: 0 auto; }
@@ -212,13 +205,13 @@
     h2 em {
       font-style: italic;
       font-weight: 300;
-      color: var(--slate);
+      color: var(--blush);
     }
 
     .body-text {
       font-size: 15px;
       font-weight: 400;
-      color: var(--slate);
+      color: var(--slate-dark);
       line-height: 1.7;
       margin-bottom: 14px;
     }
@@ -280,7 +273,8 @@
     .feature-card:nth-child(3) { transition-delay: 80ms; }
     .feature-card:nth-child(4) { transition-delay: 120ms; }
 
-    .feature-icon { font-size: 22px; margin-bottom: 14px; }
+    .feature-icon { margin-bottom: 14px; }
+    .feature-icon img { width: 100%; max-width: 130px; height: auto; display: block; border-radius: 10px; margin: 0 auto; }
     .feature-card h3 {
       font-family: 'DM Sans', sans-serif;
       font-size: 15px;
@@ -355,13 +349,40 @@
     footer a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
     footer a:hover { color: var(--slate); }
     .footer-links { display: flex; gap: 20px; }
+    .ai { color: var(--blush); font-style: normal; }
+
+    /* ── FAQ ── */
+    .faq { display: grid; gap: 10px; margin-top: 28px; }
+    .faq details {
+      background: white;
+      border: 0.5px solid var(--slate-light);
+      border-radius: 14px;
+      padding: 18px 22px;
+    }
+    .faq summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--slate-dark);
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq .chev { font-size: 12px; color: var(--slate-mid); transition: transform 180ms ease; }
+    .faq details[open] .chev { transform: rotate(180deg); }
+    .faq details p { margin-top: 12px; font-size: 14px; line-height: 1.7; color: var(--slate); }
+    .faq-note { font-size: 13px; color: var(--muted); margin-top: 24px; }
+    .faq-note a { color: var(--slate); text-decoration: underline; }
   </style>
 </head>
 <body>
 
   <nav>
     <div class="container">
-      <span class="logo">Mum<em>AI</em></span>
+      <a href="index.html" class="logo"><img src="assets/logo.png" alt="MumAI"></a>
       <div class="nav-right">
         <a href="about/index.html" class="nav-link">About</a>
         <span class="nav-badge">Early access</span>
@@ -374,9 +395,9 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container">
-        <span class="label">For the mum running everything</span>
+        <img src="assets/logo.png" alt="MumAI" style="height:80px;width:auto;display:block;margin:0 auto 36px;">
         <h1>Offload<br><em>the mental load.</em></h1>
-        <p class="hero-sub">School emails. Class WhatsApps. Appointments and deadlines. Mum<em>AI</em> learns your family — the kids, the schools, the schedules — and quietly turns the noise into drafted replies, the right reminders, and <strong>a calendar that reflects your life</strong>.</p>
+        <p class="hero-sub">School emails. Class WhatsApps. Appointments and deadlines. <strong>Mum<span class="ai">AI</span></strong> learns your family — the kids, the schools, the schedules — and quietly turns the noise into drafted replies, the right reminders, and <strong>a calendar that reflects your life</strong>.</p>
 
         <!--
           FORMSPREE SETUP (2 min):
@@ -414,27 +435,27 @@
       <div class="container">
         <span class="label">How it works</span>
         <h2>Built around how<br><em>you already work.</em></h2>
-        <p class="body-text">Just forward, snap, or speak — Mum<em>AI</em> does the rest.</p>
+        <p class="body-text">Just forward, snap, or speak — <strong>Mum<span class="ai">AI</span></strong> does the rest.</p>
         <div class="feature-grid" id="feature-grid">
           <div class="feature-card">
-            <div class="feature-icon">📧</div>
+            <div class="feature-icon"><img src="assets/01-forward-snap-speak.png" alt="Forward, snap, or speak"></div>
             <h3>Forward, snap, or speak</h3>
-            <p>Forward the school email. Snap the permission slip. Voice-note the change in pick-up time. Mum<em>AI</em> reads it and pulls out what matters.</p>
+            <p>Forward the school email. Snap the permission slip. Voice-note the change in pick-up time. <strong>Mum<span class="ai">AI</span></strong> reads it and pulls out what matters.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">👨‍👩‍👧</div>
+            <div class="feature-icon"><img src="assets/02-learns-your-family.png" alt="Learns your family"></div>
             <h3>Learns your family</h3>
-            <p>The kids, the pets, the teachers, the co-parent, the nanny, Grandma. Mum<em>AI</em> builds context once and uses it everywhere — the right tone for the right message.</p>
+            <p>The kids, the pets, the teachers, the co-parent, the nanny, Grandma. <strong>Mum<span class="ai">AI</span></strong> builds context once and uses it everywhere — the right tone for the right message.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">📅</div>
+            <div class="feature-icon"><img src="assets/03-turns-mess-into-a-week.png" alt="Turns mess into a week"></div>
             <h3>Turns mess into a week</h3>
             <p>Scattered inputs become a coordinated calendar, the right reminders, and drafted replies — including the permission slip, already filled in.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">✓</div>
+            <div class="feature-icon"><img src="assets/04-you-approve-every-send.png" alt="You approve every send"></div>
             <h3>You approve every send</h3>
-            <p>Drafts wait for your review. No autonomous emails, no surprise messages, no invites going out under your name. Mum<em>AI</em> does the heavy lifting — you stay in control.</p>
+            <p>Drafts wait for your review. No autonomous emails, no surprise messages, no invites going out under your name. <strong>Mum<span class="ai">AI</span></strong> does the heavy lifting — you stay in control.</p>
           </div>
         </div>
       </div>
@@ -444,15 +465,76 @@
     <section>
       <div class="container">
         <span class="label">What sets it apart</span>
-        <h2>Why Mum<em>AI</em><br><em>is different.</em></h2>
-        <p class="body-text">A lot of AI tools want to do things for you. Mum<em>AI</em> is different — it works around the life you already have, with the family you actually know, and you stay in control of every send.</p>
+        <h2>Why <img src="assets/logo.png" alt="MumAI" style="height:1.22em;vertical-align:middle;position:relative;top:-0.05em;"><br><em>is different.</em></h2>
+        <p class="body-text">A lot of AI tools want to do things for you. <strong>Mum<span class="ai">AI</span></strong> is different — it works around the life you already have, with the family you actually know, and you stay in control of every send.</p>
         <ul class="trust-list">
           <li><strong>You stay in control</strong><span>Drafts wait for your tap. No autonomous emails, no surprise calendar invites. Ever.</span></li>
-          <li><strong>Context that grows with your family</strong><span>Mum<em>AI</em> learns the kids, the co-parent, the nanny, the schedules — and you can update or remove anything, any time.</span></li>
+          <li><strong>Context that grows with your family</strong><span><strong>Mum<span class="ai">AI</span></strong> learns the kids, the co-parent, the nanny, the schedules — and you can update or remove anything, any time.</span></li>
           <li><strong>Fits the apps you already use</strong><span>Forward from your inbox. Share from your group chats. Sync to your calendar. No new behaviours to learn.</span></li>
-          <li><strong>No prompts, no setup, no AI homework</strong><span>All the power of modern AI, none of the wrangling. Mum<em>AI</em> handles the AI part so you don't have to.</span></li>
-          <li><strong>Commitment to privacy</strong><span>Your family's context is used to help you — never to train any AI model, ours or anyone else's. What Mum<em>AI</em> learns belongs to your account alone, and isn't shared with other users.</span></li>
+          <li><strong>No prompts, no setup, no AI homework</strong><span>All the power of modern AI, none of the wrangling. <strong>Mum<span class="ai">AI</span></strong> handles the AI part so you don't have to.</span></li>
+          <li><strong>Commitment to privacy</strong><span>Your family's context is used to help you — never to train any AI model, ours or anyone else's. What <strong>Mum<span class="ai">AI</span></strong> learns belongs to your account alone, and isn't shared with other users.</span></li>
         </ul>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy">
+      <div class="container">
+        <span class="label">Privacy</span>
+        <h2>Your family's life<br><em>We protect it</em></h2>
+        <p class="body-text">To be useful, <strong>Mum<span class="ai">AI</span></strong> has to know the things that are most important and private to you — the kids' names, the schools, who does pick-up on Thursdays. We treat that the way you'd treat it yourself.</p>
+        <ul class="trust-list">
+          <li><strong>Your data is yours</strong><span>We never sell it and never share it with other users. It's used to help you, and nothing else.</span></li>
+          <li><strong>Never used to train AI</strong><span>Not our models, not anyone else's. What <strong>Mum<span class="ai">AI</span></strong> learns belongs to your account alone.</span></li>
+          <li><strong>We never see your password</strong><span>Your email and calendar connect through delegated access via your provider's own sign-in — and you can disconnect any time.</span></li>
+          <li><strong>Nothing sends without you</strong><span>Drafts wait for your tap. No autonomous emails, no surprise calendar invites. Ever.</span></li>
+          <li><strong>Yours to edit or delete</strong><span>Every detail we hold about your family can be changed or removed, any time. Delete your account and it goes with it.</span></li>
+          <li><strong>Stored on your phone, not our servers</strong><span>Your family's details stay on your device. We don't store your data on our servers. Any data shared is encrypted — all handled under the Australian Privacy Principles.</span></li>
+        </ul>
+        <div class="pull-quote">
+          <p>"Knowing your family is the whole point. Keeping it to ourselves is the deal."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <span class="label">Frequently asked</span>
+        <h2>The questions<br><em>mums actually ask.</em></h2>
+        <div class="faq">
+          <details>
+            <summary>Is my family's data private?<span class="chev">&#9662;</span></summary>
+            <p>Yes. What we learn about your family lives in your account, is used only to help you, and is never sold, shared with other users, or used to train AI models.</p>
+          </details>
+          <details>
+            <summary>Can it send emails on my behalf?<span class="chev">&#9662;</span></summary>
+            <p>Only when you say so. <strong>Mum<span class="ai">AI</span></strong> drafts the reply, fills in the permission slip, proposes the calendar entry — then waits for your tap.</p>
+          </details>
+          <details>
+            <summary>What happens when I connect my email and calendar?<span class="chev">&#9662;</span></summary>
+            <p>You grant delegated access through your provider's own sign-in, so we never see or store your password. You choose what it can reach, and you can revoke access at any time — from us or from your provider.</p>
+          </details>
+          <details>
+            <summary>What about the kids' details?<span class="chev">&#9662;</span></summary>
+            <p>Names, schools, allergies, pick-up arrangements — we only keep what helps us help you, and you control every entry. Update or delete any detail, any time.</p>
+          </details>
+          <details>
+            <summary>Can I delete everything?<span class="chev">&#9662;</span></summary>
+            <p>Yes. Delete your account and your family's context goes with it, including anything we learned along the way. No quiet copies kept behind the scenes.</p>
+          </details>
+        </div>
+        <p class="faq-note">The detail, in full: <a href="privacy/index.html">our privacy policy</a>.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT TEASER -->
+    <section>
+      <div class="container">
+        <span class="label">About us</span>
+        <h2>Built by the people<br><em>carrying the load.</em></h2>
+        <p class="body-text"><strong>Mum<span class="ai">AI</span></strong> is made by three operators who have spent their careers building and scaling technology companies — and their evenings <strong>running the family logistics no one else sees</strong>. Nine kids between them.</p>
+        <p class="body-text"><a href="about/index.html">Find out more about the women who created MumAI →</a></p>
       </div>
     </section>
 
@@ -461,7 +543,7 @@
       <div class="container">
         <span class="label" style="text-align:center;">Early access</span>
         <h2>Want to try it<br><em>first?</em></h2>
-        <p class="intro">Mum<em>AI</em> is in early testing. Leave your email and we'll be in touch when the first spots open up.</p>
+        <p class="intro"><strong>Mum<span class="ai">AI</span></strong> is in early testing. Leave your email and we'll be in touch when the first spots open up.</p>
         <div class="signup-wrap" style="margin: 0 auto;">
           <form class="signup" style="justify-content:center;" action="https://formspree.io/f/xjgzvoar" method="POST">
             <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
@@ -477,7 +559,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Mum<em>AI</em> &mdash; mumai.com.au</p>
+      <p>&copy; 2026 <strong>Mum<span class="ai">AI</span></strong> &mdash; mumai.com.au</p>
       <div class="footer-links">
         <a href="about/index.html">About</a>
         <a href="privacy/index.html">Privacy</a>
