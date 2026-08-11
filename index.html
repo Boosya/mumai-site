@@ -12,77 +12,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="assets/styles.css">
   <style>
-    /* ── Design tokens — Blush & Slate system ── */
-    :root {
-      --slate-dark:  #1B2333;
-      --slate:       #3D4F6E;
-      --slate-mid:   #8A9BB8;
-      --slate-light: #D8E0ED;
-      --off-white:   #F6F8FB;
-
-      --blush:       #E8879D;  /* CTA only — never decorative */
-      --blush-mid:   #F2BACB;
-      --blush-light: #FCEEF1;
-
-      --muted:       #A8B4C8;
-      --done-text:   #1A6647;
-      --done-bg:     #E8F5EE;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', -apple-system, sans-serif;
-      font-weight: 400;
-      background: var(--off-white);
-      color: var(--slate-dark);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Section micro-labels: DM Sans 500, uppercase, slate mid, 0.07em — per spec */
-    .label {
-      display: block;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--slate-mid);
-      margin-bottom: 14px;
-    }
-
-    /* ── NAV ── */
-    nav {
-      border-bottom: 0.5px solid var(--slate-light);
-      padding: 20px 0;
-      background: var(--off-white);
-    }
-    nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo img {
-      height: 30px;
-      width: auto;
-      display: block;
-    }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
+    /* ── NAV (homepage only) ── */
+    .nav-right { display: flex; align-items: center; gap: 18px; }
     .nav-link {
-      font-family: 'DM Sans', sans-serif;
       font-size: 13px;
       font-weight: 500;
       color: var(--slate-mid);
@@ -91,7 +25,6 @@
     }
     .nav-link:hover { color: var(--slate); }
     .nav-badge {
-      font-family: 'DM Sans', sans-serif;
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.04em;
@@ -103,43 +36,11 @@
     }
 
     /* ── HERO ── */
-    .hero {
-      padding: 44px 0 72px;
-      text-align: center;
-      border-top: none;
-    }
-    h1 {
-      font-family: 'Fraunces', serif;
-      font-optical-sizing: auto;
-      font-size: clamp(40px, 8vw, 60px);
-      font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      color: var(--slate-dark);
-      margin-bottom: 6px;
-    }
-    h1 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--blush);
-    }
-    .hero-sub {
-      font-size: 17px;
-      font-weight: 400;
-      color: var(--slate);
-      max-width: 520px;
-      margin: 22px auto 48px;
-      line-height: 1.65;
-    }
-    .hero-sub strong { color: var(--slate-dark); font-weight: 500; }
+    .hero { padding: 44px 0 72px; text-align: center; border-top: none; }
 
     /* ── EMAIL SIGNUP ── */
     .signup-wrap { max-width: 440px; margin: 0 auto; }
-    .signup {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    .signup { display: flex; gap: 8px; flex-wrap: wrap; }
     .signup input[type="email"] {
       flex: 1 1 200px;
       padding: 13px 16px;
@@ -147,7 +48,6 @@
       border-radius: 10px;
       font-family: 'DM Sans', sans-serif;
       font-size: 15px;
-      font-weight: 400;
       background: white;
       color: var(--slate-dark);
       outline: none;
@@ -170,13 +70,7 @@
       white-space: nowrap;
     }
     .signup button:hover { opacity: 0.88; }
-    .signup-note {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 12px;
-    }
+    .signup-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px; }
     .signup-thanks {
       display: none;
       font-size: 14px;
@@ -188,77 +82,11 @@
       text-align: center;
       margin-top: 10px;
     }
-
-    /* ── SECTIONS ── */
-    section { padding: 64px 0; border-top: 0.5px solid var(--slate-light); }
-
-    h2 {
-      font-family: 'Fraunces', serif;
-      font-optical-sizing: auto;
-      font-size: clamp(30px, 5vw, 40px);
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: -0.8px;
-      color: var(--slate-dark);
-      margin-bottom: 20px;
-    }
-    h2 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--blush);
-    }
-
-    .body-text {
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--slate-dark);
-      line-height: 1.7;
-      margin-bottom: 14px;
-    }
-    .body-text strong { color: var(--slate-dark); font-weight: 500; }
-
-    /* ── Inline brand wordmark — Fraunces italic AI in body copy ── */
-    .hero-sub em,
-    .body-text em,
-    .feature-card p em,
-    .trust-list em,
-    .cta-bottom .intro em,
-    footer p em {
-      font-family: 'Fraunces', serif;
-      font-optical-sizing: auto;
-      font-style: italic;
-      font-weight: 300;
-      color: inherit;
-    }
-
-    /* ── PULL QUOTE ── */
-    .pull-quote {
-      background: white;
-      border: 0.5px solid var(--slate-light);
-      border-left: 2px solid var(--blush);
-      border-radius: 0 12px 12px 0;
-      padding: 18px 22px;
-      margin: 28px 0 0;
-    }
-    .pull-quote p {
-      font-family: 'Fraunces', serif;
-      font-optical-sizing: auto;
-      font-size: 18px;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--slate);
-      line-height: 1.5;
-    }
+    .cta-bottom .signup { justify-content: center; }
 
     /* ── FEATURE CARDS ── */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 32px;
-    }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
     @media (max-width: 520px) { .feature-grid { grid-template-columns: 1fr; } }
-
     .feature-card {
       background: white;
       border: 0.5px solid var(--slate-light);
@@ -272,31 +100,15 @@
     .feature-card:nth-child(2) { transition-delay: 40ms; }
     .feature-card:nth-child(3) { transition-delay: 80ms; }
     .feature-card:nth-child(4) { transition-delay: 120ms; }
-
     .feature-icon { margin-bottom: 14px; }
     .feature-icon img { width: 100%; max-width: 130px; height: auto; display: block; border-radius: 10px; margin: 0 auto; }
-    .feature-card h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--slate-dark);
-      margin-bottom: 8px;
-    }
-    .feature-card p {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--slate-mid);
-      line-height: 1.6;
-    }
+    .feature-card h3 { font-size: 15px; font-weight: 500; color: var(--slate-dark); margin-bottom: 8px; }
+    .feature-card p { font-size: 13px; color: var(--slate-mid); line-height: 1.6; }
 
     /* ── TRUST LIST ── */
-    .trust-list {
-      list-style: none;
-      margin-top: 18px;
-    }
+    .trust-list { list-style: none; margin-top: 18px; }
     .trust-list li {
       font-size: 14px;
-      font-weight: 400;
       color: var(--slate);
       line-height: 1.6;
       padding: 10px 0;
@@ -306,50 +118,11 @@
       align-items: flex-start;
     }
     .trust-list li:last-child { border-bottom: none; }
-    .trust-list li strong {
-      color: var(--slate-dark);
-      font-weight: 500;
-      flex: 0 0 130px;
-    }
+    .trust-list li strong { color: var(--slate-dark); font-weight: 500; flex: 0 0 130px; }
     @media (max-width: 520px) {
       .trust-list li { flex-direction: column; gap: 4px; }
       .trust-list li strong { flex: none; }
     }
-
-    /* ── BOTTOM CTA ── */
-    .cta-bottom {
-      text-align: center;
-      padding-bottom: 96px;
-    }
-    .cta-bottom h2 { margin-bottom: 10px; }
-    .cta-bottom .intro {
-      font-size: 15px;
-      color: var(--slate-mid);
-      margin-bottom: 36px;
-      max-width: 460px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cta-bottom .signup { justify-content: center; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 0.5px solid var(--slate-light);
-      padding: 24px 0;
-      background: white;
-    }
-    footer .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    footer p { font-size: 12px; color: var(--muted); }
-    footer a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
-    footer a:hover { color: var(--slate); }
-    .footer-links { display: flex; gap: 20px; }
-    .ai { color: var(--blush); font-style: normal; }
 
     /* ── FAQ ── */
     .faq { display: grid; gap: 10px; margin-top: 28px; }

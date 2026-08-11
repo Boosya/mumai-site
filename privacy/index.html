@@ -11,167 +11,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="../assets/styles.css">
   <style>
-    :root {
-      --slate-dark:  #1B2333;
-      --slate:       #3D4F6E;
-      --slate-mid:   #8A9BB8;
-      --slate-light: #D8E0ED;
-      --off-white:   #F6F8FB;
-      --blush:       #E8879D;
-      --blush-light: #FCEEF1;
-      --muted:       #A8B4C8;
-    }
+    /* ── CONTENT LAYOUT ── */
+    .content { padding: 64px 0 96px; }
+    .updated { font-size: 13px; color: var(--muted); margin-bottom: 48px; }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    /* ── PRIVACY PAGE HEADINGS (override shared h2) ── */
+    h2 { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--slate-dark); margin: 40px 0 10px; letter-spacing: 0; line-height: 1.4; }
+    h3 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--slate-dark); margin: 24px 0 8px; }
 
-    body {
-      font-family: 'DM Sans', -apple-system, sans-serif;
-      font-weight: 400;
-      background: var(--off-white);
-      color: var(--slate-dark);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ── NAV ── */
-    nav {
-      border-bottom: 0.5px solid var(--slate-light);
-      padding: 20px 0;
-      background: var(--off-white);
-    }
-    nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo img {
-      height: 30px;
-      width: auto;
-      display: block;
-    }
-    .nav-back {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--slate-mid);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .nav-back:hover { color: var(--slate); }
-
-    /* ── CONTENT ── */
-    .content {
-      padding: 64px 0 96px;
-    }
-
-    .label {
-      display: block;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--slate-mid);
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      font-family: 'Fraunces', serif;
-      font-optical-sizing: auto;
-      font-size: clamp(32px, 6vw, 44px);
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: -1px;
-      color: var(--slate-dark);
-      margin-bottom: 8px;
-    }
-    h1 em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--slate);
-    }
-
-    .updated {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 48px;
-    }
-
-    h2 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--slate-dark);
-      margin: 40px 0 10px;
-    }
-
-    p {
-      font-size: 15px;
-      color: var(--slate);
-      line-height: 1.75;
-      margin-bottom: 14px;
-    }
-
-    ul {
-      margin: 0 0 14px 0;
-      padding-left: 20px;
-    }
-    ul li {
-      font-size: 15px;
-      color: var(--slate);
-      line-height: 1.75;
-      margin-bottom: 6px;
-    }
-
+    /* ── BODY COPY ── */
+    p { font-size: 15px; color: var(--slate); line-height: 1.75; margin-bottom: 14px; }
+    ul { margin: 0 0 14px 0; padding-left: 20px; }
+    ul li { font-size: 15px; color: var(--slate); line-height: 1.75; margin-bottom: 6px; }
     strong { color: var(--slate-dark); font-weight: 500; }
 
-    .highlight {
-      background: var(--blush-light);
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin: 28px 0;
-    }
-    .highlight p {
-      margin: 0;
-      font-size: 14px;
-      color: var(--slate);
-    }
-
-    h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--slate-dark);
-      margin: 24px 0 8px;
-    }
-
-    a { color: var(--slate); }
-    a:hover { color: var(--slate-dark); }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 0.5px solid var(--slate-light);
-      padding: 24px 0;
-      background: white;
-    }
-    footer .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    footer p { font-size: 12px; color: var(--muted); }
-    footer a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
-    footer a:hover { color: var(--slate); }
-    .footer-links { display: flex; gap: 20px; }
+    /* ── HIGHLIGHT BOX ── */
+    .highlight { background: var(--blush-light); border-radius: 10px; padding: 16px 20px; margin: 28px 0; }
+    .highlight p { margin: 0; font-size: 14px; color: var(--slate); }
   </style>
 </head>
 <body>
